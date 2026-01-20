@@ -51,8 +51,36 @@
         margin-top: 12px;
         font-size: 13px;
       }
+
+      /* --- Added Game Info Panel --- */
+      #game-info {
+        max-width: 800px;
+        margin: 40px auto 60px auto;
+        padding: 20px 28px;
+        background: #111;
+        border-radius: 8px;
+        box-shadow: 0 0 24px rgba(255, 255, 255, 0.05);
+        line-height: 1.6;
+        font-size: 16px;
+      }
+
+      #game-info h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        text-shadow: 0 0 6px #ffffff55;
+      }
+
+      #game-info ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      #game-info li {
+        margin: 4px 0;
+      }
     </style>
   </head>
+
   <body>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
@@ -69,6 +97,32 @@
         <div id="unity-build-title">Let the Spirits Rest</div>
       </div>
     </div>
+
+    <!-- ✨ Added Game Info Section -->
+    <div id="game-info">
+      <h1>👻 Let the Spirits Rest 👻</h1>
+
+      <p>
+        <strong>Let the Spirits Rest</strong> is an atmospheric puzzle game where players use ritual items to help ghosts move on. 
+        Explore haunted scenes, solve item-based challenges, and race the candle to release all spirits before it burns out. 🕯️
+      </p>
+
+      <h3>🎮 Controls</h3>
+      <p>Point & Click or use Hotkeys:</p>
+      <ul>
+        <li>☀️ = 1</li>
+        <li>🌀 = 2</li>
+        <li>🌙 = 3</li>
+        <li>⭐ = 4</li>
+        <li>🧂 = Q</li>
+        <li>✝️ = W</li>
+        <li>🌿 = E</li>
+        <li>🔔 = R</li>
+      </ul>
+
+      <p><strong>Note:</strong> Boss Memory Items must be clicked when found.</p>
+    </div>
+
     <script>
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
@@ -115,7 +169,6 @@
         document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
         canvas.className = "unity-mobile";
-        // config.devicePixelRatio = 1;
       } else {
         canvas.style.width = "960px";
         canvas.style.height = "600px";
